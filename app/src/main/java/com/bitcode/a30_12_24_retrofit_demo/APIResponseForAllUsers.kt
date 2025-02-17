@@ -2,13 +2,20 @@ package com.bitcode.a30_12_24_retrofit_demo
 
 import com.google.gson.annotations.SerializedName
 
-data class APIResponse(
+data class APIResponseForAllUsers(
+    var page : Int,
+    @SerializedName("per_page")
+    var perPage : Int,
+    @SerializedName("total")
+    var total : Int,
+    @SerializedName("total_pages")
+    var totalPages : Int,
     @SerializedName("data")
-    var user : User,
-    var support : Support
+    var users : ArrayList<User1>,
+    var support1: Support1
 )
 
-data class User(
+data class User1(
     var id : Int,
     var email : String,
     @SerializedName("first_name")
@@ -18,7 +25,7 @@ data class User(
     var avatar : String
 )
 
-data class Support(
+data class Support1(
     var url : String,
     var text : String
 )
